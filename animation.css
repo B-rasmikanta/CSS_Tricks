@@ -1,0 +1,184 @@
+/*animations*/
+@keyframes changeShape {
+  from {
+    border-radius: 0%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  to {
+    border-radius: 100%;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes reduceSize {
+  from {
+    height: 200px;
+    width: 200px;
+  }
+  to {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@keyframes changeShape {
+  from {
+    border-radius: 0%;
+  }
+  to {
+    border-radius: 50%;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: #001f3f;
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+@keyframes loading {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+/* CSS STYLES */
+
+#example {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  background-color: aquamarine;
+  transform: scale(1.5, 0.4);
+  /* transform: rotate(90deg); */
+  /* transform: translate(100px,100px);  or translatex() translatey(_) ; */
+  transition: 1s ease-in-out;
+}
+#example:hover {
+  transform: rotate(360deg) translate(100px);
+}
+#rotate-style {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 35%;
+  left: 20%;
+  transform: scale(1.5, 0.4);
+  transition: 1s ease-out;
+  background-color: skyblue;
+}
+#rotate-style:hover {
+  transform: translate(0px, 100px);
+}
+
+.animation {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: blue;
+  animation: changeShape 1s ease-in-out infinite alternate;
+}
+.element {
+  width: 100%;
+  height: 100%;
+  animation: pulse 5s infinite;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#spining {
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  margin: 100px;
+  padding: 100px;
+}
+#ball {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: 20%;
+  left: 20%;
+  background-color: aquamarine;
+  animation-name: changeShape, rotate, reduceSize;
+  animation-duration: 0.5s, 0.5s, 0.5s;
+  animation-timing-function: linear, linear, linear;
+  animation-iteration-count: infinite, infinite, infinite;
+  animation-direction: alternate, alternate, alternate;
+}
+
+/* NEW COMMINGS  */
+
+.loader {
+  height: 100px;
+  width: 100px;
+  /* background-color: aliceblue; */
+  border-radius: 50%;
+  border: 5px solid #ddd;
+  border-top-color: #333;
+  animation: loading 0.4s infinite;
+}
+#selected {
+  font-size: xx-large;
+  font-weight: 100;
+  display: inline;
+}
+#selected::selection {
+  color: yellow;
+  background-color: black;
+}
+#underLine {
+  font-size: xx-large;
+  font-weight: 900;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+#underLine::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: black;
+  transition: all ease-in-out 1s;
+}
+#underLine:hover::after {
+  width: 100%;
+}
+.stroke {
+  font-weight: 900px;
+  font-size: 100px;
+  -webkit-text-stroke: 4px black;
+  color: transparent;
+}
+#shadow-btn {
+  font-weight: 900;
+  font-size: xx-larger;
+  background-color: rgb(112, 109, 109);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin: 40px 50px;
+  padding: 12px 20px;
+  transition: all ease 0.5s;
+}
+#shadow-btn:hover {
+  box-shadow: 5px 5px 0px black;
+}
